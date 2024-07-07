@@ -16,9 +16,14 @@ export default function Alert({alert}) {
     }
 
   return (
-    alert &&
-     <div className={`alert alert-${alartTypes[alert.type]}`} role="alert">
-        <strong>{capitalize(alert.type)}:</strong> {alert.msg}
-     </div>
+    <div style={{height:"50px"}}>
+        {
+            alert &&
+            <div className={`alert alert-${alartTypes[alert.type]}`} role="alert">
+                <strong>{capitalize(alert.type)}:</strong> {alert.msg}
+            </div>
+        }
+    </div>
+  
   )
 }
