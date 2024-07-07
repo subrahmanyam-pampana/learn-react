@@ -22,7 +22,7 @@ export default function TextForm({heading="Heading here",mode="light", showAlert
   };
 
   return (
-    <div style={{color:mode==='dark'?'white':'black'}}>
+    <div style={{color:mode==='dark'?'white':'black'}} className='container'>
       <div >
         <h1>{heading}</h1>
         <div className="mb-3">

@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-
+import {Link} from 'react-router-dom';
 
 export default function NavBar({title="Set Title Here",aboutText="Set About Text Here",mode='light',onToggleMode}) {
   return (
     <div>
        <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode}`}>
-        <a className="navbar-brand" href="/">{title}</a>
+        <Link to="/" className='navbar-brand' >{title}</Link>
+        {/* <a className="navbar-brand" href="/">{title}</a> */}
         <button
           className="navbar-toggler"
           type="button"
@@ -22,13 +23,12 @@ export default function NavBar({title="Set Title Here",aboutText="Set About Text
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="/"> Home <span className="sr-only">(current)</span>
-              </a>
+              <Link to="/" className="nav-link"  >Home</Link>
+              {/* <a className="nav-link" href="/"> Home <span className="sr-only">(current)</span></a> */}
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
-                {aboutText}
-              </a>
+               <Link to="/about" className="nav-link" >{aboutText}</Link>
+              {/* <a className="nav-link" href="/">{aboutText}</a> */}
             </li>
             <li className="nav-item dropdown">
               <a
@@ -61,6 +61,7 @@ export default function NavBar({title="Set Title Here",aboutText="Set About Text
               </a>
             </li>
           </ul>
+
           <form className="form-inline my-2 my-lg-0">
             <input
               className="form-control mr-sm-2"

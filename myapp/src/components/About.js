@@ -29,7 +29,7 @@ export default function About({mode='light',onToggleMode}) {
   }
 
   return (
-    <div id="accordion container" style={darkModeStyle}>
+    <div id="accordion container" style={darkModeStyle} className='container'>
         <h1>About Us</h1>
         <div className="card" style={darkModeStyle}>
             <div className="card-header" id="headingOne">
