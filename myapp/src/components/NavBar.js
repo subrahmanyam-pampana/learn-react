@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types'
 
 
-export default function NavBar(props) {
+export default function NavBar({title="Set Title Here",aboutText="Set About Text Here",mode='light',onToggleMode}) {
   return (
     <div>
-       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a className="navbar-brand" href="/">{props.title}</a>
+       <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode}`}>
+        <a className="navbar-brand" href="/">{title}</a>
         <button
           className="navbar-toggler"
           type="button"
@@ -27,7 +27,7 @@ export default function NavBar(props) {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/">
-                {props.aboutText}
+                {aboutText}
               </a>
             </li>
             <li className="nav-item dropdown">
@@ -68,9 +68,15 @@ export default function NavBar(props) {
               placeholder="Search"
               aria-label="Search"
             />
-            <button className="btn btn-primary my-2 my-sm-0" type="submit">
+            <button className="btn btn-primary my-2 my-sm-0" type="button">
               Search
             </button>
+            {/* <button type='button' className='btn btn-primary mx-2' onClick={onToggleMode} >{mode==='light'?'Enable Dark Mode':'Disable Dark Mode'}</button> */}
+            <div className={`form-check form-switch text-${mode==='dark'?'white':'dark'} mx-2`}>
+              <input type="checkbox" className="form-check-input" onClick={onToggleMode} id="modeSwitch" />
+              <label htmlFor="modeSwitch" className="form-check-label">{mode==='light'?'Enable Dark Mode':'Disable Dark Mode'}</label>
+            </div>
+            
           </form>
         </div>
       </nav>
@@ -83,8 +89,9 @@ NavBar.propTypes = {
     aboutText:PropTypes.string   
 }
 
-NavBar.defaultProps = {
-    title:"Set Title Here",
-    aboutText:"Set About Text Here"
-}
+//this sytax is depricated
+// NavBar.defaultProps = {
+//     title:"Set Title Here",
+//     aboutText:"Set About Text Here"
+// }
 

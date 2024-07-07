@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function About() {
+export default function About({mode='light',onToggleMode}) {
 
   const [darkModeStyle, setDarkModeStyle] = useState({
         backgroundColor:'white',
@@ -25,6 +25,7 @@ export default function About() {
 
         setDarkModelStateText('Enable Dark Mode') 
     }
+    onToggleMode()
   }
 
   return (
@@ -73,8 +74,7 @@ export default function About() {
             </div>
             </div>
         </div>
-
-        <button className='btn btn-primary my-3' onClick={handleDarkModeToggle} >{darkModeStateText}</button>
+        <button className={`btn btn-${mode==='light'?'dark':'light'} my-3`} onClick={handleDarkModeToggle} >{darkModeStateText}</button>
     </div>
   )
 }
