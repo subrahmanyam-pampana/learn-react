@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function TextForm({heading="Heading here",mode="light"}) {
+export default function TextForm({heading="Heading here",mode="light", showAlert}) {
   let [text, setText] = useState("");
 
   const handleTextAreaChange = (event) => {
@@ -9,6 +9,7 @@ export default function TextForm({heading="Heading here",mode="light"}) {
 
   const handleUpClick = (event) => {
     setText(text.toUpperCase());
+    showAlert("Converted to Uppercase!")
   };
 
   return (
