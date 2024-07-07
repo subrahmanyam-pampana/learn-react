@@ -7,7 +7,16 @@ export default function TextForm({heading="Heading here",mode="light", showAlert
     setText(event.target.value);
   };
 
+  const getWordCount = ()=>{
+    return (text && text.split(' ').filter(item=>item).length)||0
+
+  }
+
   const handleUpClick = (event) => {
+    if(!text){
+      showAlert("Please Enter Text to Convert","info")
+      return;
+    }
     setText(text.toUpperCase());
     showAlert("Converted to Uppercase!")
   };
@@ -33,7 +42,7 @@ export default function TextForm({heading="Heading here",mode="light", showAlert
       
       <div className="container my-3">
         <h1>Text Summary</h1>
-        <p>your text has <b>{text.split(" ").length}</b> words and <b>{text.length}</b> characters</p>
+        <p>your text has <b>{getWordCount()}</b> words and <b>{text.length}</b> characters</p>
         <h2>Preview</h2>
         <p>{text && text.length>0?text: <i>Enter Some text to Preview</i>}</p>
       </div>
