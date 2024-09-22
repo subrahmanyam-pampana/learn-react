@@ -22,11 +22,27 @@ export default function NavBar({title="Set Title Here",aboutText="Set About Text
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <Link to="/" className="nav-link"  >Home</Link>
+              <Link to="/" className="nav-link" >General</Link>
             </li>
             <li className="nav-item">
-               <Link to="/about" className="nav-link" >{aboutText}</Link>
+               <Link to="/business" className="nav-link" >Business</Link>
             </li>
+            <li className="nav-item">
+               <Link to="/entertainment" className="nav-link" >Entertainment</Link>
+            </li>
+            <li className="nav-item">
+               <Link to="/health" className="nav-link" >Health</Link>
+            </li>
+            <li className="nav-item">
+               <Link to="/science" className="nav-link" >Science</Link>
+            </li>
+            <li className="nav-item">
+               <Link to="/sports" className="nav-link" >Sports</Link>
+            </li>
+            <li className="nav-item">
+               <Link to="/technology" className="nav-link" >Technology</Link>
+            </li>
+
           </ul>
         </div>
       </nav>
@@ -44,4 +60,12 @@ NavBar.propTypes = {
 //     title:"Set Title Here",
 //     aboutText:"Set About Text Here"
 // }
+
+  // business
+  // entertainment
+
+  // health
+  // science
+  // sports
+  // technology
 
